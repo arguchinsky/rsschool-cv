@@ -1,0 +1,128 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::-webkit-scrollbar{
+  width: 0.5em;
+  height: 0.5em;
+}
+
+*::-webkit-scrollbar-thumb{
+  background-color: darkgray;
+  border-radius: 10px;
+}
+
+html{
+  background-color: rgba(212, 212, 212, 0.76);
+}
+
+h2, h3, h4{
+  text-align: center;
+}
+
+hr{
+  width: 60vw;
+  margin: 0 auto;
+}
+
+li{
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+a{
+  text-decoration: none;
+}
+
+.wrapper{
+  max-width: 1024px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+/*header*/
+
+header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+}
+
+.photo{
+  width: 250px;
+  height: 250px;
+  border-radius: 125px;
+}
+
+.name-contacts{
+  text-align: center;
+}
+
+.contact{
+  display: inline-block;
+  list-style-type: none;
+  margin: 0.1rem 0.3rem;
+}
+
+.icon{
+  width: 32px;
+  height: 32px;
+}
+
+.icon:hover{
+  width: 38px;
+}
+
+.nav-item{
+  margin: 0.2rem 0;
+  padding: 0.1rem 0.5rem;
+  text-align: center;
+  background-color: black;
+  list-style-type: none;
+  border-radius: 10px;
+}
+
+.nav-item>a{
+  color: white;
+  font-weight: 700;
+}
+.nav-item>a:hover{
+  font-style: italic;
+}
+
+/*main*/
+
+section{
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+.examples{
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+
+.example{
+  overflow: hidden;
+  padding: 1rem;
+  background-color: rgba(212, 212, 212, 0.76);
+  border-radius: 20px;
+}
+
+.example:hover{    
+  overflow: auto;
+}
+
+/*footer*/
+
+footer{
+  padding: 0.2rem;
+  font-size: 1.3rem;
+  text-align: right;
+}
