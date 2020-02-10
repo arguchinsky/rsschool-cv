@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Arguchinsky Alexey</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <img src="./images/photo.jpg" alt="photo of me" class="photo">
+            <div class="name-contacts">
+                <h1>Arguchinsky Alexey</h1>
+                <h2>Contacts:</h2>
+                <ul>
+                    <li class="contact">
+                        <a href="tel:+375333607138" title="phone number" target="_blank">
+                            <img src="./images/icons/phone.png" class="icon" alt="my phone number">
+                        </a>
+                    </li>
+                    <li class="contact">
+                        <a href="mailto:arguchinsky55@gmail.com" title="email" target="_blank">
+                            <img src="./images/icons/email.png" class="icon" alt="email">
+                        </a>
+                    </li>
+                    <li class="contact">
+                        <a href="https://www.facebook.com/people/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9-%D0%90%D1%80%D0%B3%D1%83%D1%87%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9/100001835178675" title="facebook profile" target="_blank">
+                            <img src="./images/icons/facebook.png" class="icon" alt="facebook profile">
+                        </a>
+                    </li>
+                    <li class="contact">
+                        <a href="https://github.com/arguchinsky" title="github profile" target="_blank">
+                            <img src="./images/icons/github.png" class="icon" alt="github profile">
+                        </a>
+                    </li>
+                    <li class="contact">
+                        <a href="https://t.me/arguchinsky" title="telegram" target="_blank">
+                            <img src="./images/icons/telegram.png" class="icon" alt="telegram">
+                        </a>
+                    </li>
+                    <li class="contact">
+                        <a href="https://www.linkedin.com/in/%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9-%D0%B0%D1%80%D0%B3%D1%83%D1%87%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-11193b18a/" title="linkedin profile" target="_blank">
+                            <img src="./images/icons/linkedin.png" class="icon" alt="linkedin profile">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <nav>
+                <li class="nav-item">
+                    <a href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#code-examples">Code examples</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#english">English</a>
+                </li>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <section id="about">
+                    <h2>About me</h2>
+                    <p>
+                      I am a developer (embedded software). I work for an enterprise “Электроприбор”. I started my carrier in the 2010 year.
+                      I am developing embedded software for the devices used in the energy sector(converters, ammeters, voltmeters, wattmeters, etc.). At this moment, I work on implementing the Protocol “IEC101” in the devices manufacturing our enterprise. 
+                      I’m also adding new functionality for some modifications to our devices. 
+                      Also, I am engaged in administrating our <a href="http://www.electropribor.by/">website</a>.
+                      Now I want to change my specialization from the Embedded to the Front-end development.
+                    </p>
+                </section>
+                <hr>
+                <section id="skills">
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>C++</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>SCSS/SASS</li>
+                        <li>Javascript</li>
+                        <li>React</li>
+                        <li>Redux</li>
+                        <li>Git</li>
+                        <li>Webpack</li>
+                        <li>Eslint</li>
+                        <li>Babel</li>
+                        <li>EditorConfig</li>
+                    </ul>
+                </section>
+                <hr>
+                <section id="code-examples">
+                    <h3>Code examples</h3>
+                    <div class="examples">
+                        <div class="example border-right">
+                            <h4>Javascript:</h4>
+<pre><code>
+"use strict";
+const gallery = document.querySelector('.gallery');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+                            
+const width = 960;
+                            
+const leftPos = gallery.getBoundingClientRect().left;
+const endSwitch = (gallery.getBoundingClientRect().width * -1) + width ;
+                            
+let position = 0;
+                            
+const prevSlide = () => {
+    if (position &lt; 0) position += width;
+    else position = 0;
+    gallery.style.marginLeft = position+'px';
+    console.log(position);
+}
+                            
+const nextSlide = () => {
+    if (position > endSwitch )position -= width;
+    else position = endSwitch;
+    gallery.style.marginLeft = position+'px';
+    console.log(position);
+}
+                            
+nextBtn.addEventListener('click', nextSlide);
+prevBtn.addEventListener('click', prevSlide); </code></pre>
+                        </div>
+                        <div class="example border-left">
+                            <h4>JSX:</h4>
+<pre><code>
+import React from 'react';
+import PropTypes from 'prop-types';
+import Color from '../color/color.jsx';
+                            
+const ColorList = ({colors, onRemove, onRate}) =>
+    &lt;div className="color-list"&gt;
+        {
+            (colors.length === 0) ?
+            &lt;p&gt;No Colors Listed. (Add a Color)&lt;/p&gt; :
+                colors.map(color => &lt;Color key={color.id} {...color}
+                                            onRate={(rating) => onRate(color.id, rating)}
+                                            onRemove={() => onRemove(color.id)}/&gt;)
+        }
+        &lt;/div&gt;
+                            
+ColorList.propTypes = {
+    colors: PropTypes.array,
+    onRemove: PropTypes.func,
+    onRate: PropTypes.func,
+}
+                            
+ColorList.defaultProps = {
+    colors: [],
+    onRemove: ()=>{},
+    onRate: ()=>{},
+}
+                            
+export default ColorList;</code></pre>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section id="projects">
+                    <h3>My projects</h3>
+                    <p>
+                        <a href="https://arguchinsky-weather.surge.sh/" target="_blank">Weather app</a>.
+                    </p>
+                </section>
+                <hr>
+                <section id="experience">
+                    <h3>Experience</h3>
+                    <ul>
+                        <li><a href="https://www.codecademy.com/profiles/arguchinsky-alexey">Codeacademy</a></li>
+                        <li><a href="https://www.codewars.com/users/arguchinsky">Codewars</a></li>
+                    </ul>
+                </section>
+                <hr>
+                <section id="education">
+                    <h3>Education</h3>
+                    <p>
+                        In the 2009 year, I am finished Vitebsk State University named after P.M.Masherov.
+                        I have a Bachelor’s degree in physics and informatics.
+                    </p>
+                </section>
+                <hr>
+                <section id="english">
+                    <h3>English level</h3>
+                    <p>
+                      I don’t know my English level. I read the technical documentation.
+                      But I have some difficulty in conversations.
+                      I understand my interviewer if he doesn’t speak quickly.
+                      I don’t have much experience communicating with other people in English.
+                    </p>
+                </section>
+            </article>
+        </main>
+        <footer>
+            <p>&copy; <a href="https://github.com/arguchinsky">Arguchinsky Alexey</a> <time datetime="2019">2020</time></p>
+        </footer>
+    </div>
+</body>
+</html>
